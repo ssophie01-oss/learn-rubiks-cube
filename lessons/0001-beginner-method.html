@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beginner Method – Rubik’s Cube</title>
+  <style>
+    body {font-family:system-ui,Helvetica,Arial,sans-serif; line-height:1.6; max-width:800px; margin:auto; padding:1rem;}
+    h1,h2,h3 {color:#2c3e50;}
+    pre {background:#f8f8f8; padding:0.5rem; overflow:auto;}
+    .algo {font-weight:bold; color:#c0392b;}
+    .note {font-style:italic; color:#7f8c8d;}
+    a {color:#2980b9;}
+  </style>
+</head>
+<body>
+  <h1>Rubik’s Cube – Beginner (Layer‑by‑Layer) Method</h1>
+  <p>This lesson walks you through the classic beginner approach to solving a 3×3 cube. It assumes you have a standard cube that turns freely.</p>
+
+  <h2>1️⃣ Notation</h2>
+  <p>Moves are expressed with single‑letter symbols. A letter alone means a 90° clockwise turn of that face. Adding an apostrophe (') means counter‑clockwise, and a 2 means a 180° turn.</p>
+  <pre>
+U – Upper face clockwise       U' – Upper face counter‑clockwise
+D – Down face clockwise          D' – Down face counter‑clockwise
+L – Left face clockwise          L' – Left face counter‑clockwise
+R – Right face clockwise         R' – Right face counter‑clockwise
+F – Front face clockwise         F' – Front face counter‑clockwise
+B – Back face clockwise          B' – Back face counter‑clockwise
+  </pre>
+  <p>Reference: <a href="https://ruwix.com/the-rubiks-cube/notation/" target="_blank">Ruwix notation guide</a></p>
+
+  <h2>2️⃣ Steps Overview</h2>
+  <ol>
+    <li>White Cross – align white edges with side centres.</li>
+    <li>First‑layer corners – place the remaining white corners.</li>
+    <li>Second‑layer edges – insert the four middle‑layer edge pieces.</li>
+    <li>Yellow cross – form a plus on the opposite (yellow) face.</li>
+    <li>Orient yellow edges – turn them so side colours match.</li>
+    <li>Position yellow corners – move each corner to its correct spot.</li>
+    <li>Orient yellow corners – twist them to finish the cube.</li>
+  </ol>
+  <p>We’ll detail each step with the exact algorithm you need.</p>
+
+  <h2>3️⃣ Detailed Algorithms</h2>
+  <h3>✳️ White cross (no algorithm – just intuitive moves)</h3>
+  <p>Find each white edge, bring it to the <strong>U</strong> layer, then rotate the <strong>U</strong> face until the side colour matches the centre on that side.</p>
+
+  <h3>✳️ First‑layer corners</h3>
+  <p>Algorithm (repeat until the corner is solved):</p>
+  <pre class="algo">R U R' U'</pre>
+
+  <h3>✳️ Second‑layer edges</h3>
+  <p>Right‑hand algorithm (when the target slot is on the right):</p>
+  <pre class="algo">U R U' R' U' F' U F</pre>
+  <p>Left‑hand algorithm (when the target slot is on the left):</p>
+  <pre class="algo">U' L' U L U F U' F'</pre>
+
+  <h3>✳️ Yellow cross</h3>
+  <p>Algorithm (apply until you have a full cross):</p>
+  <pre class="algo">F R U R' U' F'</pre>
+
+  <h3>✳️ Orient yellow edges</h3>
+  <p>Algorithm (run until all four edges match side colours):</p>
+  <pre class="algo">R U R' U R U2 R'</pre>
+
+  <h3>✳️ Position yellow corners</h3>
+  <p>Algorithm (cycles three corners; repeat until every corner is in the right place):</p>
+  <pre class="algo">U R U' L' U R' U' L</pre>
+
+  <h3>✳️ Orient yellow corners</h3>
+  <p>Algorithm for a single mis‑oriented corner (hold it at the front‑right‑up spot):</p>
+  <pre class="algo">R' D' R D</pre>
+  <p>Repeat until the corner is solved, then turn the <strong>U</strong> face to bring the next corner into place.</p>
+
+  <h2>4️⃣ Practice Routine</h2>
+  <ol>
+    <li>Scramble the cube (use any random scramble).</li>
+    <li>Work through the steps above, **one step at a time**. Don’t rush – focus on understanding why each algorithm works.</li>
+    <li>After you finish, note how long it took. Try again a few days later and aim to be a few seconds faster.</li>
+  </ol>
+  <p>For a visual walkthrough, watch <a href="https://www.youtube.com/watch?v=7RONKQeQvWQ" target="_blank">J Perm’s beginner tutorial</a>.</p>
+
+  <h2>5️⃣ Quick‑reference Cheat‑Sheet</h2>
+  <p>Copy‑paste the table below into a note or print it for fast lookup.</p>
+  <pre>
+Notation | Meaning
+--------|---------
+U       | Upper face clockwise
+U'      | Upper face counter‑clockwise
+R       | Right face clockwise
+R'      | Right face counter‑clockwise
+F       | Front face clockwise
+F'      | Front face counter‑clockwise
+... (etc.)
+
+Algorithms:
+White‑corner: R U R' U'
+Right‑edge:   U R U' R' U' F' U F
+Left‑edge:    U' L' U L U F U' F'
+Yellow‑cross:  F R U R' U' F'
+Edge orient:  R U R' U R U2 R'
+Corner pos:   U R U' L' U R' U' L
+Corner orient: R' D' R D
+  </pre>
+
+  <h2>6️⃣ Next Steps</h2>
+  <ul>
+    <li>Practice the above until you can solve the cube **without looking at the guide**.</li>
+    <li>When comfortable, try the <em>CFOP</em> “Fridrich” method for faster solves – it builds on the same basics.</li>
+    <li>Join the <a href="https://www.reddit.com/r/Cubers/" target="_blank">r/Cubers</a> community to ask questions and share progress.</li>
+  </ul>
+
+  <hr>
+  <p><em>Need clarification on any step? Just ask and I’ll walk you through it.</em></p>
+</body>
+</html>
